@@ -1,0 +1,212 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.navbar-logo-text {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--color-white);
+}
+
+.navbar-logo-text .verse { color: var(--color-pink); }
+
+.navbar-menu {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar-menu a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active { color: var(--color-yellow); }
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-search input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  color: var(--color-white);
+  font-size: 14px;
+  outline: none;
+  width: 180px;
+}
+
+.navbar-search input:focus { border-color: var(--color-yellow); }
+
+.icon-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--color-pink);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-signin {
+  padding: 10px 20px;
+  font-size: 13px;
+}
+
+/* account menu */
+.account-menu { position: relative; }
+
+.account-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-pink), var(--color-yellow));
+  color: var(--color-bg);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.account-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+}
+
+.account-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 220px;
+  background: var(--color-bg-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.account-dropdown-head {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 4px;
+}
+
+.account-dropdown-name {
+  display: block;
+  font-weight: 600;
+  color: var(--color-white);
+  font-size: 14px;
+}
+
+.account-dropdown-email {
+  display: block;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.account-dropdown a,
+.account-dropdown button {
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.account-dropdown a:hover,
+.account-dropdown button:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-white);
+}
+
+.account-dropdown button {
+  border-top: 1px solid var(--color-border);
+  margin-top: 4px;
+  color: var(--color-pink);
+}
+
+.mobile-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-white);
+  font-size: 18px;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 16px 24px;
+  background: var(--color-bg-2);
+  border-top: 1px solid var(--color-border);
+}
+
+.mobile-menu a {
+  padding: 12px 0;
+  font-size: 16px;
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+@media (max-width: 968px) {
+  .navbar-menu, .navbar-signin, .navbar-search { display: none; }
+  .mobile-toggle { display: flex; }
+  .mobile-menu { display: flex; }
+}
